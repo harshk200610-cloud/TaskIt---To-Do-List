@@ -72,22 +72,4 @@ The application works on desktop and mobile devices.
 - JavaScript (ES6)
 - Local Storage API
 
----
 
-# JavaScript Concepts Used
-
-## Variables
-
-- let
-- const
-
----
-
-## Objects
-
-```javascript
-let state = {
-    tasks: [],
-    currentFilter: "all"
-};
-```
