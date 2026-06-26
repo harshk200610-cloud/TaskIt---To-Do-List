@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskIt</title>
+
+    <link rel="stylesheet" href="todo.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>TaskIt</h1>
+        <p class="subtitle">Organize your workflow seamlessly</p>
+      </header>
+
+      <main class="main-content">
+        <section class="form-card">
+          <form id="todo-form">
+            <div class="input-group main-input">
+              <input
+                type="text"
+                id="task-input"
+                placeholder="What needs to be done?"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-meta-row">
+              <div class="meta-item">
+                <label for="task-category">Category</label>
+
+                <select id="task-category" required>
+                  <option value="" disabled selected hidden>Select...</option>
+                  <option value="Work">Work</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Academic">Academic</option>
+                  <option value="Urgent">Urgent</option>
+                </select>
+              </div>
+
+              <div class="meta-item">
+                <label for="task-priority">Priority</label>
+
+                <!-- FIXED -->
+                <select id="task-priority" required>
+                  <option value="" disabled selected hidden>Select...</option>
+
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+
+                  <!-- FIXED -->
+                  <option value="high">High</option>
+                </select>
+              </div>
+
+              <div class="meta-item">
+                <label for="task-date">Due Date</label>
+
+                <input type="date" id="task-date" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Add Task</button>
+          </form>
+        </section>
+
+        <section class="controls-bar">
+          <div class="filter-group">
+            <button type="button" class="filter-btn active" data-filter="all">
+              All
+            </button>
+
+            <button type="button" class="filter-btn" data-filter="active">
+              Active
+            </button>
+
+            <button type="button" class="filter-btn" data-filter="completed">
+              Completed
+            </button>
+          </div>
+
+          <div class="stats">
+            <span id="items-left">0 tasks left</span>
+          </div>
+        </section>
+
+        <section class="task-list-container">
+          <ul id="task-list" class="task-list"></ul>
+
+          <div id="empty-state" class="empty-state">
+            <p>No tasks found. Enjoy your peace of mind!</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>
